@@ -111,7 +111,10 @@ class PreflightTests(unittest.TestCase):
             self.assertIn("--ephemeral", command)
             self.assertEqual(command[command.index("--sandbox")+1], "read-only")
             self.assertNotIn("--model", command)
-            self.assertEqual(command[-4:], ["--image", str(self.image), "--image", str(other)])
+            self.assertEqual(command[-4::2], ["--image", "--image"])
+            # Windows TEMP can use an 8.3 alias (RUNNER~1); compare file identity.
+            self.assertTrue(Path(command[-3]).samefile(self.image))
+            self.assertTrue(Path(command[-1]).samefile(other))
             self.assertNotIn(self.request.read_text(encoding="utf-8"), prompt)
             self.assertIn('"id": "V2"', prompt)
             self.assertFalse((Path(command[command.index("--cd")+1]) / "AGENTS.md").exists())
