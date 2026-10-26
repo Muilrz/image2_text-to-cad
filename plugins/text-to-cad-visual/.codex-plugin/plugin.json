@@ -3,7 +3,7 @@
   "version": "0.7.24",
   "description": "Experimental image-to-CAD fork: inspect reference geometry into a standard CAD Visual Spec, then continue the original text-to-cad modeling workflow.",
   "author": {
-    "name": "text-to-cad Visual contributors"
+    "name": "Ming Liu"
   },
   "license": "MIT",
   "keywords": [
@@ -22,7 +22,7 @@
     "displayName": "text-to-cad Visual (experimental)",
     "shortDescription": "Inspect images, then build CAD",
     "longDescription": "Experimental image-to-CAD fork: inspect reference geometry into a standard CAD Visual Spec, then continue the original text-to-cad modeling workflow.",
-    "developerName": "text-to-cad Visual contributors",
+    "developerName": "earthtojake, Ming Liu",
     "category": "Creativity",
     "capabilities": [
       "Write",
@@ -30,6 +30,10 @@
     ],
     "defaultPrompt": [
       "Use text-to-cad-visual to reconstruct this reference image. Inspect it into a CAD Visual Spec before modeling."
-    ]
-  }
+    ],
+    "websiteURL": "https://github.com/Muilrz/image2_text-to-cad",
+    "supportURL": "https://github.com/Muilrz/image2_text-to-cad/issues"
+  },
+  "repository": "https://github.com/Muilrz/image2_text-to-cad",
+  "homepage": "https://github.com/Muilrz/image2_text-to-cad"
 }

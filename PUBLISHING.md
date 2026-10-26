@@ -8,7 +8,7 @@
 2. README 说明这是衍生实验版，说明改进点、安装方式、行为边界和上游来源。
 3. NOTICE 记录上游和本项目改动。NOTICE 是本项目添加的归属说明，并非 MIT 强制规定的文件名。
 4. 新增贡献采用 MIT。可以用自己的实际姓名、组织名称或适当署名添加新增贡献的版权行；不要把上游版权行直接替换为自己的名字。
-5. 未填写你的具体 GitHub 身份。发布前可把插件清单中的项目贡献者署名替换为实际维护者，并补上本项目的 repository/homepage/support 地址。不要把上游网站写成本项目的支持或隐私政策承诺。
+5. 插件 JSON 的 `author.name` 为 `Ming Liu`，开发者展示为 `earthtojake, Ming Liu`，项目地址为 `https://github.com/Muilrz/image2_text-to-cad`。独立 GUI 保留原作者后追加 Ming Liu。保留这些署名及上游许可证，不把上游网站当成本项目支持承诺。
 
 参考：
 

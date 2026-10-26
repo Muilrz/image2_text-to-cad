@@ -51,8 +51,30 @@ def main():
         errors.append("CAD runtime pin differs from upstream version")
     if original is not None and (original / "codex.mcp.json").is_file():
         old = json.loads((original / "codex.mcp.json").read_text(encoding="utf-8"))["mcpServers"]["cad"]
-        if servers.get("cad_visual") != old:
+        actual = dict(servers.get("cad_visual", {}))
+        if actual.pop("cwd", None) != ".":
+            errors.append("Custom GUI cwd must be the plugin root")
+        actual["env"] = dict(actual.get("env", {}))
+        if actual["env"].pop("CADGEN_MCP_APP_DIR", None) != "gui":
+            errors.append("Custom GUI resource override missing")
+        if actual != old:
             errors.append("CAD runtime command differs from original")
+    gui = FORK / "gui"
+    if not (gui / "index.html").is_file() or not (gui / "source.json").is_file():
+        errors.append("Custom GUI files missing")
+    else:
+        gui_source = json.loads((gui / "source.json").read_text(encoding="utf-8"))
+        if sha(gui / "index.html") != gui_source["custom_html_sha256"]:
+            errors.append("Custom GUI hash differs from its provenance")
+        if gui_source["upstream_version"] != upstream["upstream_version"]:
+            errors.append("GUI and CAD runtime versions differ")
+        if not (gui / "LICENSE").is_file() or sha(gui / "LICENSE") != expected_files["LICENSE"]:
+            errors.append("GUI upstream MIT license missing or changed")
+    for path in FORK.rglob("*.json"):
+        doc = json.loads(path.read_text(encoding="utf-8-sig"))
+        if isinstance(doc, dict) and isinstance(doc.get("author"), dict):
+            if doc["author"].get("name") != "Ming Liu":
+                errors.append(f"Author name is not Ming Liu: {path.relative_to(FORK)}")
     license_path = FORK / "LICENSE"
     if not license_path.is_file() or sha(license_path) != expected_files["LICENSE"]:
         errors.append("Upstream MIT license was not preserved")

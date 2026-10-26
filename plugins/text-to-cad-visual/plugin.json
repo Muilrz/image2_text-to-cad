@@ -16,5 +16,7 @@
     "urdf",
     "sdf",
     "gcode"
-  ]
+  ],
+  "repository": "https://github.com/Muilrz/image2_text-to-cad",
+  "homepage": "https://github.com/Muilrz/image2_text-to-cad"
 }

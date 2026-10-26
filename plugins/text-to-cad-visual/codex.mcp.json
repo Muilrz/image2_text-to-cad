@@ -14,8 +14,10 @@
       ],
       "startup_timeout_sec": 300,
       "env": {
-        "CADGEN_INSTALL_CHANNEL": "codex-github"
-      }
+        "CADGEN_INSTALL_CHANNEL": "codex-github",
+        "CADGEN_MCP_APP_DIR": "gui"
+      },
+      "cwd": "."
     }
   }
 }

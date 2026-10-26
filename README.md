@@ -89,6 +89,16 @@ visual_spec.json  来源记录与 inspection 对象
 
 预检路由通过 skill 指令实现；不是应用层强制钩子。未使用图像重建时不要求额外预检。
 
+## 独立 GUI
+
+`plugins/text-to-cad-visual/gui/` 保存基于 cadgen 0.7.24 的独立 GUI 文件。
+Codex 使用实验版配置中的插件相对工作目录和 `CADGEN_MCP_APP_DIR=gui`
+加载它，原版插件和共享 cadgen 缓存保持不变。界面作者显示追加 `, Ming Liu`，
+GitHub 菜单与反馈入口指向本项目；引擎版本信息不变。
+
+更改仅在同步安装缓存并重新启动 MCP 服务后生效。仅修改工作目录不会让当前已打开的界面热更新。
+重建命令与来源哈希见 `gui/README.md`。当前为 Codex 集成界面配置，独立浏览器 Viewer 与其他宿主的界面未修改。
+
 ## 验证与对比
 
 ```powershell
@@ -116,6 +126,7 @@ plugins/text-to-cad-visual/
   .codex-plugin/plugin.json
   codex.mcp.json
   skills/
+  gui/             实验版独立界面与来源记录
   LICENSE
   NOTICE.md
   UPSTREAM_README.md
@@ -132,4 +143,4 @@ PUBLISHING.md
 
 原版许可证保留在根目录及插件目录的 `LICENSE` 中，包含 **Copyright (c) 2026 Thompson Labs LLC**。本项目的新增代码和文档沿用 MIT 条款。上游作者与项目归属见 `NOTICE.md`，来源版本及原始文件哈希见 `UPSTREAM.json`，修改范围见 `CHANGELOG.md`。
 
-插件清单中的 `text-to-cad Visual contributors` 是本项目的贡献者署名；公开维护者可按实际情况填写 GitHub 名称及仓库地址。该署名不替代上游版权声明。依赖项保持各自许可证，本仓库不打包分发 cadgen、build123d、Open CASCADE 或其他运行时依赖。
+插件清单中的 `author.name` 为 `Ming Liu`，Codex 开发者展示为 `earthtojake, Ming Liu`。CAD GUI 保留原作者并追加 `, Ming Liu`，GitHub 和反馈入口指向本项目。署名不替代上游版权声明。仓库包含独立 GUI 页面及其许可证说明；cadgen Python 引擎、build123d、Open CASCADE 等仍作为外部运行时依赖获取。
