@@ -52,13 +52,16 @@ def main():
     if original is not None and (original / "codex.mcp.json").is_file():
         old = json.loads((original / "codex.mcp.json").read_text(encoding="utf-8"))["mcpServers"]["cad"]
         actual = dict(servers.get("cad_visual", {}))
-        if actual.pop("cwd", None) != ".":
-            errors.append("Custom GUI cwd must be the plugin root")
+        if actual.pop("cwd", None) != "./":
+            errors.append("Custom GUI cwd must use the contained ./ plugin-root syntax")
         actual["env"] = dict(actual.get("env", {}))
         if actual["env"].pop("CADGEN_MCP_APP_DIR", None) != "gui":
             errors.append("Custom GUI resource override missing")
         if actual != old:
             errors.append("CAD runtime command differs from original")
+    portable = json.loads((FORK / "mcp.json").read_text(encoding="utf-8"))["mcpServers"]["cad_visual"]
+    if portable.get("cwd") != "./":
+        errors.append("Portable MCP cwd must be ./; bare . is rejected by Codex")
     gui = FORK / "gui"
     if not (gui / "index.html").is_file() or not (gui / "source.json").is_file():
         errors.append("Custom GUI files missing")

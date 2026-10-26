@@ -13,3 +13,7 @@ Correct inherited Claude marketplace identity; add environment diagnostics, dist
 ## Local GUI attribution update
 
 Adds a dedicated GUI resource based on the pinned 0.7.24 page. Preserves the original author and appends Ming Liu in the UI, unifies author.name as Ming Liu, and sets Codex developerName to earthtojake, Ming Liu. GitHub and feedback point to Muilrz/image2_text-to-cad. Codex loads the page from this plugin's gui directory; shared runtime files and the original plugin stay untouched.
+
+## MCP loading fix
+
+Use `cwd: "./"` in both MCP declarations. The Agent Plugins loader rejects bare `"."`, which hid cad_visual and the Viewer entry. Verified through Codex plugin/read, MCP discovery and the Viewer HTML resource.

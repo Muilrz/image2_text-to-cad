@@ -17,7 +17,7 @@
         "CADGEN_INSTALL_CHANNEL": "codex-github",
         "CADGEN_MCP_APP_DIR": "gui"
       },
-      "cwd": "."
+      "cwd": "./"
     }
   }
 }

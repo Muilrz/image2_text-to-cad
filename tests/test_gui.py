@@ -54,7 +54,7 @@ class GuiTests(unittest.TestCase):
     def test_codex_gui_is_plugin_relative_and_runtime_pin_unchanged(self):
         for name in ('codex.mcp.json', 'mcp.json'):
             config = json.loads((PLUGIN / name).read_text(encoding='utf-8'))['mcpServers']['cad_visual']
-            self.assertEqual(config['cwd'], '.')
+            self.assertEqual(config['cwd'], './', 'Agent Plugins rejects bare . and hides the MCP service')
             resource = (PLUGIN / config['env']['CADGEN_MCP_APP_DIR']).resolve()
             self.assertEqual(resource, GUI.resolve())
             self.assertTrue((resource / 'index.html').is_file())

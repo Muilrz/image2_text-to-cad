@@ -18,7 +18,7 @@
         "CADGEN_INSTALL_CHANNEL": "agent-plugins",
         "CADGEN_MCP_APP_DIR": "gui"
       },
-      "cwd": "."
+      "cwd": "./"
     }
   }
 }

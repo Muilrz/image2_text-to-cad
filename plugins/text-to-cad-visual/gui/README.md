@@ -27,8 +27,11 @@ Alternatively pass `--upstream-html /path/to/cadgen/_runtime/mcp/index.html`.
 The script checks the exact upstream page hash before changing anything. Review
 and update the patch explicitly when upgrading the CAD runtime.
 
-Codex's `codex.mcp.json` and the generic `mcp.json` use `cwd: "."` (resolved by
+Codex's `codex.mcp.json` and the generic `mcp.json` use `cwd: "./"` (resolved by
 Codex against the installed plugin root) and `CADGEN_MCP_APP_DIR: "gui"`.
 The inherited Claude/Cursor/Gemini launch settings are kept; they are not claimed
 to load this custom GUI until their host-specific paths have been configured and
 tested. The standalone browser viewer is also unchanged.
+
+The leading `./` is required by Codex's Agent Plugins parser. A bare `.`
+is a valid OS path but an invalid contained plugin path and hides the MCP server.
