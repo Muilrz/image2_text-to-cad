@@ -1,0 +1,21 @@
+{
+  "name": "text-to-cad-visual",
+  "version": "0.7.24",
+  "description": "Experimental image-to-CAD fork: inspect reference geometry into a standard CAD Visual Spec, then continue the original text-to-cad modeling workflow.",
+  "author": {
+    "name": "text-to-cad Visual contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cad",
+    "robotics",
+    "fabrication",
+    "skills",
+    "step",
+    "urdf",
+    "sdf",
+    "gcode"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./cursor.mcp.json"
+}

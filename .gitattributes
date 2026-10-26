@@ -1,0 +1,2 @@
+# Preserve exact upstream bytes for UPSTREAM.json SHA-256 verification on every OS.
+* -text

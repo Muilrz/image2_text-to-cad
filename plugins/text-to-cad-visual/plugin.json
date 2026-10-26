@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "text-to-cad-visual",
+  "version": "0.7.24",
+  "description": "Experimental image-to-CAD fork: inspect reference geometry into a standard CAD Visual Spec, then continue the original text-to-cad modeling workflow.",
+  "author": {
+    "name": "Ming Liu"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cad",
+    "robotics",
+    "fabrication",
+    "skills",
+    "step",
+    "urdf",
+    "sdf",
+    "gcode"
+  ]
+}

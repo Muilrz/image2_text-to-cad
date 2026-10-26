@@ -1,0 +1,20 @@
+{
+  "name": "ming-cad-lab",
+  "interface": {
+    "displayName": "CAD Visual experiments"
+  },
+  "plugins": [
+    {
+      "name": "text-to-cad-visual",
+      "source": {
+        "source": "local",
+        "path": "./plugins/text-to-cad-visual"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

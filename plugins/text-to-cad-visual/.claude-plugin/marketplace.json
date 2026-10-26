@@ -1,0 +1,27 @@
+{
+  "name": "ming-cad-lab",
+  "owner": {
+    "name": "text-to-cad Visual contributors"
+  },
+  "interface": {
+    "displayName": "CAD Visual experiments"
+  },
+  "metadata": {
+    "description": "Design 3D models"
+  },
+  "description": "Design 3D models",
+  "version": "0.7.24",
+  "plugins": [
+    {
+      "name": "text-to-cad-visual",
+      "source": "./",
+      "description": "Visual Inspector preflight followed by the existing CAD workflow.",
+      "version": "0.7.24",
+      "author": {
+        "name": "text-to-cad Visual contributors"
+      },
+      "license": "MIT",
+      "category": "productivity"
+    }
+  ]
+}
